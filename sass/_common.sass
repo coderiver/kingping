@@ -48,119 +48,223 @@
 // 	+jpg(bla)
 
 
+// breackpoint
+=r1
+	@media only screen and (max-width: "980px")
+		@content
+=r2
+	@media only screen and (max-width: "768px")
+		@content
+
 body
 	font-family: Arial, sans-serif 
 	font-size: 12px 
 	line-height: 1.4
 
 
-// common blocks      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// fonts
+
++font("ProximaNova Black", proximanova-black)
++font("ProximaNova Bold", proximanova-bold)
++font("ProximaNova Light", proximanova-light)
++font("ProximaNova Regular", proximanova-regular)
++font("ProximaNova Semibold", proximanova-semibold)
++font("HelveticaNeue Bold", helveticaneuecyr-bold)
++font("HelveticaNeue Regular", HelveticaNeueCyr-Roman)
+
+=black
+	font-family: "ProximaNova Black", Arial, sans-serif
+=bold
+	font-family: "ProximaNova Bold", Arial, sans-serif
+=light
+	font-family: "ProximaNova Light", Arial, sans-serif
+=reg
+	font-family: "ProximaNova Regular", Arial, sans-serif
+=semi
+	font-family: "ProximaNova Semibold", Arial, sans-serif
+	
+=hr
+	font-family: "HelveticaNeue Regular", Arial, sans-serif
+=hb
+	font-family: "HelveticaNeue Bold", Arial, sans-serif
+
+	
+//reset
+h1, h2, h3, h4, h5, h6, b, strong
+	font-weight: normal
+a
+	text-decoration: none
+
+.btn
+	font-size: 18px
+	color: #FFF
+	text-transform: uppercase
+	+bold
+	width: 265px
+	text-align: center
+	background: no-repeat center center
+	-webkit-background-size: cover 
+	-o-background-size: cover 
+	background-size: cover 
+	padding: 32px 0 29px 
+	display: block
+	margin: 0 auto
+	+border-radius(42px)
+	overflow: hidden
+	position: relative
+	&:before
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		content: "" 
+		+transition(opacity 0.3s)
+		+opacity(0)
+		+border-radius(42px)
+	span
+		position: relative
+		z-index: 2
+	&:active
+		top: 1px
+	&_red		
+		background-image: url(../img/btn.png) 
+		&:before
+			+gh(#b83463, #fdb352)			
+		&:hover
+			&:before
+				+opacity(1)
+	&_yellow		
+		background-image: url(../img/btn-2.png) 
+		&:before
+			+gh(#feab9b, #ffd392)			
+		&:hover
+			&:before
+				+opacity(1)
+	
+.scroll-btn
+	display: inline-block
+	vertical-align: top
+	letter-spacing: 0.2em 
+	font-size: 10px
+	color: #FFF
+	text-transform: uppercase
+	+reg
+	&:hover
+		i
+			+opacity(0.7)
+	span
+		display: block
+		padding: 0 0 15px 
+	i
+		+svg(scroll, 18, 31)
+		display: block
+		margin: 0 auto
+		+opacity(0.5)
+
+.title
+	font-size: 16px
+	+bold
+	text-transform: uppercase
+	letter-spacing: 0.2em 
+	line-height: 1.2
+	
+p
+	font-size: 21px
+	+reg
+	line-height: 1.2
+	+r2
+		font-size: 18px
+	
+.event
+	display: inline-block
+	&:hover
+		span
+			text-decoration: none
+	i
+		+svg(event, 60, 69)
+		+vertical
+		margin-bottom: 25px
+		&.is-contact
+			&:after
+				+svg(contact, 23, 21)
+		&.is-signup
+			&:after
+				+svg(signup, 22, 22)
+		&.is-date
+			&:after
+				+svg(date, 23, 25)
+		&:after
+			display: inline-block
+			vertical-align: middle
+			content: ""
+	span
+		display: block
+		text-decoration: underline
+		text-transform: uppercase
+		font-size: 16px
+		color: #1C2932
+		+bold
+
+.field
+	position: relative
+	text-align: left
+	&:before
+		position: absolute
+		bottom: 0
+		left: 50%
+		right: 50%
+		height: 4px
+		background: #fcb252
+		+transition(all 0.5s ease)
+		content: "" 
+	&.is-active
+		&:before
+			left: 0
+			right: 0
+	.input
+		font-size: 16px
+		color: #FFF
+		+reg
+		background: none
+		width: 100%
+		border-bottom: 4px solid #fff 
+		padding: 16px 0 
+		+placeholder-color(#fff)
+
+.btn-nav
+	float: right
+	width: 30px
+	border: 1px solid #fff
+	+border-radius(5px)
+	background: none
+	text-align: center
+	font-size: 0
+	padding: 12px 0 
+	+transition(border-color 0.3s)
+	margin: 9px 0 0 
+	display: none
+	+r1
+		display: block
+	span
+		width: 20px
+		height: 3px
+		background: #fff
+		display: inline-block 
+		+border-radius(2px)
+		position: relative
+		+transition(background 0.3s)
+		&:before, &:after
+			content: "" 
+			width: 20px
+			height: 3px
+			background: #fff
+			+border-radius(3px)
+			position: absolute
+			left: 0
+			+transition(background 0.3s)
+		&:before
+			top: -6px
+		&:after
+			bottom: -6px
+			

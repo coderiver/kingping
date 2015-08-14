@@ -1,1 +1,797 @@
-// Normally mainpage styles
+.out
+	overflow: hidden
+	min-width: 320px
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 1000
+	+transition(background 0.3s)
+	&.is-active
+		background: #fff 
+		.logo, .nav li a, .lang a.is-active
+			color: #1c2932 
+		.nav li a
+			&:hover
+				color: #a0bcd3 
+		.header__inner
+			padding: 15px 10px 15px 
+		.btn-nav
+			border-color: #000
+			span
+				background: #000
+				&:before, &:after
+					background: #000 
+		.nav
+			+r1
+				margin: -10px 0 0 
+			&.is-active
+				+r1
+					margin: 15px 0 0
+	&__inner
+		position: relative
+		z-index: 2
+		max-width: 960px
+		padding: 32px 10px 32px
+		margin: 0 auto  
+		+clr
+		+transition(padding 0.3s)
+
+.logo
+	+bold
+	color: #FFF
+	font-size: 22px
+	line-height: 1
+	padding: 13px 0 10px 55px
+	float: left
+	position: relative
+	+user-select(none)
+	margin: 0 112px 0 5px 
+	+transition(color 0.3s)
+	+r1
+		margin: 0 20px 0 0 
+	b
+		color: #A0BCD3
+	&:before
+		content: "" 
+		+svg(logo, 41, 45)
+		position: absolute
+		top: 0
+		left: 0
+
+.nav
+	float: left
+	font-size: 0
+	padding: 15px 0 
+	+r1
+		float: none
+		position: absolute
+		top: 100%
+		right: 10px
+		width: 200px
+		text-align: center
+		background: #fff 
+		+border-radius(10px)
+		+box-shadow(0 0 3px rgba(0, 0, 0, 0.75))
+		margin: -30px 0 0 
+		visibility: hidden
+		+opacity(0) 
+		will-change: opacity
+	&:before, &:after
+		content: "" 
+		position: absolute
+		bottom: 100%
+		right: 15px
+		display: none
+		+r1
+			display: block
+	&:before
+		+arr(17, 12, #000, t)
+		+opacity(0.3)
+	&:after
+		margin: 0 1px 
+		+arr(15, 10, #fff, t)
+	&.is-active
+		+r1
+			margin: -10px 0 0 
+			visibility: visible
+			+opacity(1)
+			+transition(visibility 0.3s, opacity 0.3s, margin 0.3s)
+	li
+		display: inline-block
+		vertical-align: top
+		padding: 0 12px 
+		+r1
+			display: block
+			padding: 0			
+		a
+			font-size: 13px
+			+semi
+			text-transform: uppercase
+			color: #fff
+			display: inline-block
+			+transition(color 0.3s)
+			+r1
+				color: #1c2932 
+				display: block
+				padding: 5px 
+			&:hover 
+				color: #A0BCD3 
+				+r1
+					background: #A0BCD3 
+					color: #1c2932 
+
+.lang
+	padding: 15px 0
+	font-size: 0 
+	float: right
+	position: relative
+	margin: 0 -12px 0 0
+	+r1
+		float: left
+	&:before
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 1px
+		height: 9px
+		background: #a0bcd3
+		+opacity(0.3)
+		margin-top: -5px
+		content: ""  
+	a
+		font-size: 13px
+		+semi
+		text-transform: uppercase		
+		color: #A0BCD3
+		display: inline-block
+		vertical-align: top
+		margin: 0 12px		
+		+transition(color 0.3s)
+		&.is-active
+			color: #fff 
+
+.top
+	position: relative
+	background: url(../img/shutterstock_189606761.jpg) no-repeat fixed
+	+cover		
+	text-align: center
+	&__inner
+		position: relative
+		z-index: 2
+		max-width: 960px
+		padding: 310px 10px 70px
+		margin: 0 auto  
+		+r1
+			padding: 200px 10px 70px 
+			max-width: 800px
+		+r2
+			max-width: 400px
+	&__slider
+		text-align: center
+		padding: 0 0 50px 
+		.slick-track
+			margin-bottom: 50px 
+	&__slide
+		font-size: 36px
+		+light
+		color: #FFF
+		letter-spacing: -0.001em 
+		line-height: 1.2
+		+r1
+			font-size: 28px
+		+r2
+			font-size: 22px
+		b
+			color: #A0BCD3
+			+bold
+	.btn
+		margin-bottom: 172px
+.about
+	background: url(../img/about.png) no-repeat 95px 0 #f06c5f
+	text-align: center
+	&__inner
+		max-width: 780px
+		margin: 0 auto
+		padding: 147px 10px
+		+r2
+			max-width: 400px
+			padding: 100px 10px 
+	.title, p
+		color: #fff
+	.title
+		margin-bottom: 35px
+		
+.advertisers
+	background: #ecf2f6
+	text-align: center
+	&__inner
+		max-width: 680px
+		margin: 0 auto
+		padding: 150px 10px 
+		+r2
+			max-width: 400px
+			padding: 100px 10px 
+	.title, p
+		color: #1C2932
+	.title
+		margin-bottom: 25px
+	p
+		+opacity(0.7)	
+		max-width: 500px
+		margin: 0 auto 70px
+	&__box
+		position: relative
+		padding-bottom: 120px
+		+r1
+			padding-bottom: 83px 
+		&.is-last
+			padding-bottom: 60px
+			+r1
+				padding-bottom: 40px
+			&:before, &:after
+				display: none
+		&:before, &:after
+			position: absolute
+			bottom: 20px
+			left: 50%
+			content: "" 
+		&:before
+			margin-left: -1px
+			width: 2px
+			background-color: #A0BCD3
+			height: 77px
+			+r2
+				height: 40px
+		&:after
+			+arr(8, 5, #A0BCD3, b)
+			margin-left: -4px
+	&__box-inner
+		position: relative
+	&__icon-wrap
+		position: relative
+		width: 172px
+		margin: 0 auto 
+		padding: 50px 0 
+		&.is-first
+			span
+				&.is-big
+					background-color: #A0BCD3
+					top: 37px
+					left: -21px
+					&:before
+						+arr(60, 17, #A0BCD3, t)
+					&:after
+						+arr(60, 17, #A0BCD3, b)
+				&.is-small
+					background-color: #9D4E6A
+					top: 78px
+					left: -70px
+					&:before
+						+arr(18, 5, #9D4E6A, t)
+					&:after
+						+arr(18, 5, #9D4E6A, b)
+		&.is-second
+			span
+				&.is-big
+					background-color: #F06C5F
+					top: 30px
+					right: -21px
+					&:before
+						+arr(60, 17, #F06C5F, t)
+					&:after
+						+arr(60, 17, #F06C5F, b)
+		&.is-third
+			span				
+				&.is-big
+					background-color: #FDB352
+					bottom: 28px
+					left: -23px
+					&:before
+						+arr(60, 17, #FDB352, t)
+					&:after
+						+arr(60, 17, #FDB352, b)
+				&.is-small
+					background-color: #A0BCD3
+					bottom: 85px
+					left: -50px
+					&:before
+						+arr(18, 5, #A0BCD3, t)
+					&:after
+						+arr(18, 5, #A0BCD3, b)
+		&.is-fourth
+			span				
+				&.is-big
+					background-color: #9D4E6A
+					top: 42px
+					right: -12px
+					&:before
+						+arr(60, 17, #9D4E6A, t)
+					&:after
+						+arr(60, 17, #9D4E6A, b)
+		span
+			position: absolute
+			&.is-big
+				width: 60px
+				height: 35px
+			&.is-small
+				width: 18px
+				height: 11px
+			&:before, &:after
+				content: "" 
+				position: absolute
+				left: 0
+				right: 0
+			&:before
+				bottom: 100%
+			&:after
+				top: 100%
+					
+	&__icon
+		width: 172px
+		height: 100px
+		position: relative
+		background: #fff 
+		&:before, &:after
+			content: "" 
+			position: absolute
+			left: 0
+			right: 0
+		&:before
+			bottom: 100%
+			+arr(172, 50, #fff, t)
+		&:after
+			top: 100%
+			+arr(172, 50, #fff, b)
+		i
+			position: absolute
+			top: 50%
+			left: 50%
+			-webkit-transform: translate(-50%, -50%) 
+			-moz-transform: translate(-50%, -50%) 
+			-ms-transform: translate(-50%, -50%) 
+			-o-transform: translate(-50%, -50%) 
+			transform: translate(-50%, -50%) 
+			&.is-focus
+				+svg(focus, 48, 48)
+			&.is-world
+				+svg(world, 49, 49)
+			&.is-boost
+				+s(boost)
+			&.is-control
+				+s(control)
+	&__right, &__left
+		position: absolute
+		top: 50%
+		-webkit-transform: translateY(-50%) 
+		-moz-transform: translateY(-50%) 
+		-ms-transform: translateY(-50%) 
+		-o-transform: translateY(-50%) 
+		transform: translateY(-50%)
+		width: 190px
+		+r2
+			position: static
+			width: 100%
+			-webkit-transform: translateY(0) 
+			-moz-transform: translateY(0) 
+			-ms-transform: translateY(0) 
+			-o-transform: translateY(0) 
+			transform: translateY(0) 
+			padding: 10px 0 0 
+		span
+			font-size: 18px
+			+semi
+			color: #5A656C
+			line-height: 1.2 
+	&__right
+		right: 0
+		text-align: left
+		+r2
+			text-align: center
+	&__left
+		left: 0
+		text-align: right
+		+r2
+			text-align: center
+
+.publishers
+	position: relative
+	background: url(../img/publishers.jpg) no-repeat fixed
+	+cover		
+	text-align: center
+	&__inner
+		max-width: 980px
+		padding: 150px 10px 
+		margin: 0 auto
+		+r2
+			padding: 100px 10px
+			max-width: 400px 
+	.title
+		color: #FDB352
+		margin-bottom: 25px
+	p
+		color: #FFF
+		+opacity(0.7)
+		max-width: 524px
+		margin: 0 auto 90px
+	.event
+		span
+			color: #fff
+.items
+	font-size: 0
+	text-align: center
+	padding: 0 0 95px 
+	+r2
+		padding: 0 0 40px 
+	
+.item
+	width: 241px
+	padding: 69px 0 
+	position: relative
+	display: inline-block
+	vertical-align: top
+	margin: 0 35px -16px
+	+r2
+		display: block
+		margin: 0 auto 40px 
+	&:hover
+		.item__hover
+			+opacity(1)
+			visibility: visible
+		.item__inner
+			+opacity(0)
+			visibility: hidden
+	&.is-tablet
+		+r1
+			display: block
+			margin: 0 auto -16px
+		+r2
+			display: block
+			margin: 0 auto 40px 
+	&__inner
+		position: relative
+		background-color: #313D46	
+		height: 139px	
+		+transition(opacity 0.4s, visibility 0.4s)
+		&:before, &:after
+			content: "" 
+			position: absolute
+			left: 0
+			right: 0
+		&:before
+			bottom: 100%
+			+arr(241, 69, #313D46, t)
+		&:after
+			top: 100%
+			+arr(241, 69, #313D46, b)
+	&__icon
+		height: 81px
+		margin-bottom: 25px
+		+vertical
+		i
+			display: inline-block
+			vertical-align: bottom
+			&.is-campaigns
+				+s(campaigns)
+			&.is-share
+				+s(share)
+			&.is-payments
+				+s(payments)
+			&.is-tds
+				+s(tds)
+			&.is-rtb
+				+s(rtb)
+	b, small
+		text-transform: uppercase
+		color: #fff
+		line-height: 1
+		display: block 
+	b
+		font-size: 21px
+		+bold
+	small
+		font-size: 13px
+		+semi
+	&__hover
+		+opacity(0)
+		visibility: hidden
+		+transition(opacity 0.4s, visibility 0.4s)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: url(../img/item-hover.png) no-repeat center center
+		+cover
+		+vertical
+		padding: 30px 
+		span
+			display: inline-block
+			vertical-align: middle
+			color: #FFF
+			font-size: 16px
+			+bold
+			line-height: 1.2
+
+.tools
+	&__inner
+		max-width: 980px
+		padding: 150px 10px 30px
+		margin: 0 auto 
+		text-align: center
+		+r2
+			padding: 100px 10px 30px 
+	.title
+		color: #1C2932
+		padding: 0 0 15px
+		border-bottom: 5px solid #F06C5F
+		display: inline-block
+		margin-bottom: 70px
+	&__list
+		font-size: 0
+
+.tools-item
+	width: 50%
+	display: inline-block
+	vertical-align: top
+	max-width: 491px
+	padding: 0 70px 90px
+	+r1
+		padding: 0 30px 50px
+	+r2
+		display: block
+		width: 100%
+		margin: 0 auto 
+	&.is-big
+		max-width: 580px
+		width: 100%
+	h4		
+		font-size: 21px
+		+semi
+		line-height: 1.2
+		color: #1C2932
+		margin-bottom: 10px
+	p, li
+		color: #404040
+		font-size: 14px
+		padding: 10px 0 
+		+hr
+		line-height: 20px
+		a
+			color: #587083
+			+hb
+			text-decoration: underline
+			&:hover
+				text-decoration: none 
+	li
+		display: inline-block
+		vertical-align: top
+		margin: 0 10px 
+	&__partners
+		padding: 0 0 10px 
+		text-align: right
+		margin: 0 -26px 
+		+r1
+			margin: 0 -15px
+			text-align: center 
+	&__partner
+		display: inline-block
+		vertical-align: middle
+		margin: 0 26px 
+		+r1
+			margin: 0 15px 
+	&__icon
+		height: 90px
+		+vertical
+		margin-bottom: 25px
+		i
+			display: inline-block
+			vertical-align: bottom
+			&.is-panel
+				+svg(panel, 76, 65)
+			&.is-network
+				+svg(network, 68, 68)
+			&.is-rtb
+				+svg(rtb, 103, 70)
+				margin: 0 0 0 60px 
+			&.is-tds
+				+svg(tds, 86, 86)
+			&.is-tools
+				+svg(tools, 67, 67)
+				
+.events
+	background-color: #ECF2F6
+	&__inner
+		max-width: 1000px
+		padding: 150px 10px
+		margin: 0 auto
+		text-align: center
+		+r1
+			max-width: 780px
+		+r2
+			max-width: 400px
+			padding: 100px 10px 
+	.title
+		color: #1C2932
+		margin-bottom: 40px
+	&__tabs
+		font-size: 0
+		margin-bottom: 74px
+		li
+			display: inline-block
+			vertical-align: top
+			padding: 0 35px 
+			a
+				color: #1C2932
+				opacity: 0.7
+				display: inline-block
+				font-size: 13px
+				+semi
+				text-transform: uppercase
+				padding: 15px 0 
+				border-bottom: 4px solid transparent 
+				&.is-active
+					border-bottom-color: #F06C5F
+	&__slider
+		margin-bottom: 85px
+		padding: 0 40px 
+	&__slide
+		text-align: left
+		padding: 0 15px
+		+r1
+			padding: 0 10px 
+	&__slide-inner
+		display: block
+	&__img
+		margin-bottom: 25px
+	img
+		width: 100%
+	time, small
+		display: block
+		line-height: 18px
+	time
+		color: #64717B
+		font-size: 15px
+		+reg
+		margin-bottom: 18px
+	small
+		color: #1C2932
+		font-size: 14px
+		+semi
+		max-width: 193px
+		+r1
+			max-width: 100%
+		
+.contacts
+	background-color: #F06C5F
+	&__inner
+		max-width: 960px
+		padding: 150px 10px 70px
+		text-align: center
+		margin: 0 auto 
+		color: #FFF
+		+r1
+			max-width: 780px
+		+r2
+			padding: 100px 10px 30px 
+			max-width: 400px
+	.title
+		color: #FFF
+		border-bottom: 4px solid #FCB252 
+		padding: 0 0 15px
+		display: inline-block
+		margin-bottom: 38px
+	&__info
+		margin-bottom: 50px
+		h2
+			font-size: 28px
+			+reg
+			line-height: 40px
+			+r2
+				font-size: 22px
+				line-height: 1.2
+				padding: 5px 0 
+			b
+				+bold
+	&__phones
+		font-size: 0
+		margin-bottom: 80px
+		+r2
+			margin-bottom: 40px
+		li
+			font-size: 18px
+			display: inline-block
+			vertical-align: top
+			width: 33.3%
+			+r2
+				width: 100%
+				padding: 5px 0 
+			span, b
+				display: block
+			span
+				color: #FCB252
+				+reg
+			b
+				color: #FFF
+				+bold
+	&__form
+		padding: 0 0 100px 
+		+r2
+			padding: 0 0 10px 
+	&__row
+		margin: 0 -15px 35px
+		font-size: 0
+	&__box
+		padding: 0 15px 25px 
+		width: 50%
+		display: inline-block
+		vertical-align: top
+		+r2
+			width: 100%
+	
+.footer
+	text-align: center
+	padding: 55px 0 0 
+
+.social
+	font-size: 0
+	margin-bottom: 40px
+	li
+		display: inline-block
+		vertical-align: top
+		padding: 0 5px 
+	a
+		display: inline-block
+		width: 40px
+		height: 40px
+		background-color: #FFF
+		+border-radius(50%)
+		position: relative
+		&:before
+			position: absolute
+			content: ""
+		&.is-fb
+			&:before
+				top: 11px
+				left: 15px
+				+svg(fb, 10, 19)
+		&.is-tw
+			&:before
+				top: 13px
+				left: 11px
+				+svg(tw, 20, 17)
+		&.is-in
+			&:before
+				top: 9px
+				left: 11px
+				+svg(in, 20, 19)
+
+.copy
+	font-size: 13px
+	+semi
+
+.js-visibility
+	&.is-visible
+		.is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
+			visibility: visible
+			+opacity(1)
+	.is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
+		visibility: hidden
+		+opacity(0)
+	.is-one	
+		+transition(opacity 0.4s 0.3s, visibility 0.4s 0.3s)
+	.is-two	
+		+transition(opacity 0.4s 0.6s, visibility 0.4s 0.6s)
+	.is-three	
+		+transition(opacity 0.4s 0.9s, visibility 0.4s 0.9s)
+	.is-four	
+		+transition(opacity 0.4s 1.2s, visibility 0.4s 1.2s)
+	.is-five	
+		+transition(opacity 0.4s 1.5s, visibility 0.4s 1.5s)
+	.is-six	
+		+transition(opacity 0.4s 1.8s, visibility 0.4s 1.8s)
+	.is-seven	
+		+transition(opacity 0.4s 2.1s, visibility 0.4s 2.1s)
+	.is-eight	
+		+transition(opacity 0.4s 2.4s, visibility 0.4s 2.4s)
