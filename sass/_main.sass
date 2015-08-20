@@ -30,7 +30,7 @@
 		.logo, .nav li a, .lang a.is-active
 			color: #1c2932 
 		.nav li a
-			&:hover
+			&:hover, &.is-active
 				color: #a0bcd3 
 		.header__inner
 			padding: 15px 10px 15px 
@@ -133,7 +133,7 @@
 				color: #1c2932 
 				display: block
 				padding: 5px 
-			&:hover 
+			&:hover, &.is-active
 				color: #A0BCD3 
 				+r1
 					background: #A0BCD3 
@@ -176,15 +176,29 @@
 	+cover		
 	text-align: center
 	overflow: hidden
+	height: 100vh
+	min-height: 580px
+	+r1
+		min-height: 100px
+		height: auto
+		padding-bottom: 100px 
 	&__inner
 		position: relative
 		z-index: 2
 		max-width: 960px
-		padding: 310px 10px 70px
+		padding: 150px 10px 150px
 		margin: 0 auto  
+		position: absolute
+		top: 50%
+		left: 50%
+		+translate(-50%, -50%)
 		+r1
 			padding: 200px 10px 70px 
 			max-width: 800px
+			position: relative
+			top: auto
+			left: auto
+			+translate(0, 0)
 		+r2
 			max-width: 400px
 	&__slider
@@ -205,8 +219,11 @@
 		b
 			color: #A0BCD3
 			+bold
-	.btn
-		margin-bottom: 172px
+	.scroll-btn
+		position: absolute
+		bottom: 70px
+		left: 50%
+		margin-left: -46px
 .about
 	background: url(../img/about.png) no-repeat 95px 0 #f06c5f
 	text-align: center
@@ -523,16 +540,27 @@
 		bottom: 0
 		background: url(../img/item-hover.png) no-repeat center center
 		+cover
-		+vertical
 		padding: 30px 
-		span
-			display: inline-block
-			vertical-align: middle
-			color: #FFF
-			font-size: 16px
-			+bold
-			line-height: 1.2
-
+	&__background
+		+cover
+		background-repeat: no-repeat
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 1
+		+opacity(0.3)
+	&__text
+		display: inline-block
+		vertical-align: middle
+		color: #FFF
+		font-size: 16px
+		+bold
+		line-height: 1.2
+		padding: 10px 30px 
+		position: relative
+		z-index: 3
 .tools
 	&__inner
 		max-width: 980px
@@ -892,28 +920,62 @@
 	+semi
 
 .js-visibility
+	+transition(opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s)
+	visibility: hidden
+	+opacity(0)
+	transform: matrix(0.9, 0, 0, 0.9, 0, 0)
 	&.is-visible
-		.is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
-			visibility: visible
-			+opacity(1)
-			transform: matrix(1, 0, 0, 1, 0, 0)
-	.is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
+		visibility: visible
+		+opacity(1)
+		transform: matrix(1, 0, 0, 1, 0, 0)
+		// .is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
+		// 	visibility: visible
+		// 	+opacity(1)
+		// 	transform: matrix(1, 0, 0, 1, 0, 0)
+	// .is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
+	// 	visibility: hidden
+	// 	+opacity(0)
+	// 	transform: matrix(0.9, 0, 0, 0.9, 0, 0)
+	// .is-one	
+	// 	+transition(opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s)
+	// .is-two	
+	// 	+transition(opacity 0.25s 0.4s, visibility 0.25s 0.4s, transform 0.4s 0.4s)
+	// .is-three	
+	// 	+transition(opacity 0.25s 0.6s, visibility 0.25s 0.6s, transform 0.4s 0.6s)
+	// .is-four	
+	// 	+transition(opacity 0.25s 0.8s, visibility 0.25s 0.8s, transform 0.4s 0.8s)
+	// .is-five	
+	// 	+transition(opacity 0.25s 1s, visibility 0.25s 1s, transform 0.4s 1s)
+	// .is-six	
+	// 	+transition(opacity 0.25s 1.2s, visibility 0.25s 1.2s, transform 0.4s 1.2s)
+	// .is-seven	
+	// 	+transition(opacity 0.25s 1.4s, visibility 0.25s 1.4s, transform 0.4s 1.4s)
+	// .is-eight	
+	// 	+transition(opacity 0.25s 1.6s, visibility 0.25s 1.6s, transform 0.4s 1.6s)
+	
+.b-polygon_hexagon2
+	+rotate(120)
+	width: 240px
+	height: 480px
+	margin: -132px -29px
+	display: inline-block
+	text-align: center
+	overflow: hidden
+	.b-polygon-part
+		+rotate(-60)
 		visibility: hidden
-		+opacity(0)
-		transform: matrix(0.9, 0, 0, 0.9, 0, 0)
-	.is-one	
-		+transition(opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s)
-	.is-two	
-		+transition(opacity 0.25s 0.4s, visibility 0.25s 0.4s, transform 0.4s 0.4s)
-	.is-three	
-		+transition(opacity 0.25s 0.6s, visibility 0.25s 0.6s, transform 0.4s 0.6s)
-	.is-four	
-		+transition(opacity 0.25s 0.8s, visibility 0.25s 0.8s, transform 0.4s 0.8s)
-	.is-five	
-		+transition(opacity 0.25s 1s, visibility 0.25s 1s, transform 0.4s 1s)
-	.is-six	
-		+transition(opacity 0.25s 1.2s, visibility 0.25s 1.2s, transform 0.4s 1.2s)
-	.is-seven	
-		+transition(opacity 0.25s 1.4s, visibility 0.25s 1.4s, transform 0.4s 1.4s)
-	.is-eight	
-		+transition(opacity 0.25s 1.6s, visibility 0.25s 1.6s, transform 0.4s 1.6s)
+		display: block
+		overflow: hidden
+		width: 100%
+		height: 100%
+	.b-polygon-part_content
+		width: 240px
+		height: 276px
+		margin: 102px 0
+		+cover
+		background-repeat: no-repeat
+		visibility: visible
+		+vertical
+		background-color: #F06C5F
+		position: relative
+		

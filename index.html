@@ -22,12 +22,12 @@
 			<a href="#" class="logo">King<b>ping</b></a>
 			<nav class="nav js-nav">
 				<ul>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Publishers</a></li>
-					<li><a href="#">Advertisers</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Events</a></li>
-					<li><a href="#">Contacts</a></li>
+					<li><a href="#about">About us</a></li>
+					<li><a href="#publishers">Publishers</a></li>
+					<li><a href="#advertisers">Advertisers</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#events">Events</a></li>
+					<li><a href="#contacts">Contacts</a></li>
 				</ul>
 			</nav>
 			<div class="lang">
@@ -42,42 +42,42 @@
 	<!-- end header -->
 	
 	<!-- begin top  -->
-	<section class="top js-visibility">
+	<section class="top js-block">
 		<div class="video">
-			<video src="video/6149672.mp4" autoplay loop></video>
+			<video src="video/shutterstock_v6149672.mov" autoplay loop></video>
 		</div>
 		<div class="top__inner">
 			<!--TOP SLIDER-->
-			<div class="top__slider js-slick is-one">
+			<div class="top__slider js-visibility js-slick is-one">
 				<h2 class="top__slide"><b>Kingping</b> is a Cost-per-Action affiliate network, connecting advertisers and publishers in affiliate marketing</h2>
 				<h2 class="top__slide"><b>Kingping</b> is a Cost-per-Action affiliate network, connecting advertisers and publishers in affiliate marketing</h2>
 				<h2 class="top__slide"><b>Kingping</b> is a Cost-per-Action affiliate network, connecting advertisers and publishers in affiliate marketing</h2>
 			</div>
-			<button class="btn btn_red is-two"><span>Sign Up</span></button>
-			<a href="#" class="scroll-btn is-three">
-				<span>Scroll down</span>
-				<i></i>
-			</a>
+			<button class="btn btn_red js-visibility is-two"><span>Sign Up</span></button>
 		</div>	
+		<a href="#" class="scroll-btn js-visibility is-three">
+			<span>Scroll down</span>
+			<i></i>
+		</a>
 	</section>
 	<!-- end top -->
 
 	<!-- begin about  -->
-	<section class="about js-visibility">
+	<section class="about js-block" id="about">
 		<div class="about__inner">
-			<h3 class="title is-one">about us</h3>
-			<p class="is-two">Kingping is a global performance marketing network delivering worldwide quality traffic on a large scale. We generate millions of clicks from our publishers which convert to thousands of actions for our advertisers.</p>
-			<p class="is-three">Our team is experienced marketing and technical specialists who understand exactly how to increase retention rates for mobile app developers and how to maximize the potential of a publisher.</p>
+			<h3 class="title js-visibility is-one">about us</h3>
+			<p class="is-two js-visibility">Kingping is a global performance marketing network delivering worldwide quality traffic on a large scale. We generate millions of clicks from our publishers which convert to thousands of actions for our advertisers.</p>
+			<p class="is-three js-visibility">Our team is experienced marketing and technical specialists who understand exactly how to increase retention rates for mobile app developers and how to maximize the potential of a publisher.</p>
 		</div>
 	</section>
 	<!-- end about -->
 
 	<!-- begin advertisers  -->
-	<section class="advertisers js-visibility">
+	<section class="advertisers js-block" id="advertisers">
 		<div class="advertisers__inner">
-			<h3 class="title is-one">Advertisers</h3>
-			<p class="is-two">We are ready to provide you high quality traffic almost from any country!</p>
-			<div class="advertisers__box is-three">
+			<h3 class="title js-visibility is-one">Advertisers</h3>
+			<p class="is-two js-visibility">We are ready to provide you high quality traffic almost from any country!</p>
+			<div class="advertisers__box js-visibility is-three">
 				<div class="advertisers__box-inner">
 					<div class="advertisers__icon-wrap is-first">
 						<span class="is-big"></span>
@@ -91,7 +91,7 @@
 					</div>
 				</div>				
 			</div>
-			<div class="advertisers__box is-four">
+			<div class="advertisers__box js-visibility is-four">
 				<div class="advertisers__box-inner">
 					<div class="advertisers__icon-wrap is-second">
 						<span class="is-big"></span>
@@ -104,7 +104,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="advertisers__box is-five">
+			<div class="advertisers__box js-visibility is-five">
 				<div class="advertisers__box-inner">
 					<div class="advertisers__icon-wrap is-third">
 						<span class="is-big"></span>
@@ -118,7 +118,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="advertisers__box is-six is-last">
+			<div class="advertisers__box js-visibility is-six is-last">
 				<div class="advertisers__box-inner">
 					<div class="advertisers__icon-wrap is-fourth">
 						<span class="is-big"></span>
@@ -131,7 +131,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" class="event is-seven">
+			<a href="#" class="event js-visibility is-seven">
 				<i class="is-contact"></i>
 				<span>contact us</span>
 			</a>
@@ -140,12 +140,12 @@
 	<!-- end advertisers -->
 
 	<!-- begin publishers  -->
-	<section class="publishers js-visibility">
+	<section class="publishers js-block" id="publishers">
 		<div class="publishers__inner">
-			<h3 class="title is-one">publishers</h3>
-			<p class="is-two">We are ready to provide you thousands iOS, Android and WAP campaigns that will help you to monetize traffic with the best rates!</p>
+			<h3 class="title js-visibility is-one">publishers</h3>
+			<p class="is-two js-visibility">We are ready to provide you thousands iOS, Android and WAP campaigns that will help you to monetize traffic with the best rates!</p>
 			<div class="items">
-				<a href="#" class="item is-three">
+				<a href="#" class="item js-visibility is-three">
 					<div class="item__inner">
 						<div class="item__icon">
 							<i class="is-campaigns"></i>
@@ -154,10 +154,17 @@
 						<small>Campaigns</small>
 					</div>
 					<div class="item__hover">
-						<span>All campaings in our system always alive and checked</span>
-					</div>
+						<div class="b-polygon_hexagon2">
+							<span class="b-polygon-part">
+								<span class="b-polygon-part b-polygon-part_content">
+									<span class="item__background" style="background-image: url(http://placecage.com/280/280);"></span>
+									<span class="item__text">All campaings in our system always alive and checked</span>
+								</span>
+							</span>
+						</div>
+					</div>					
 				</a>
-				<a href="#" class="item is-four">
+				<a href="#" class="item js-visibility is-four">
 					<div class="item__inner">
 						<div class="item__icon">
 							<i class="is-share"></i>
@@ -166,10 +173,17 @@
 						<small>Revenue share+</small>
 					</div>
 					<div class="item__hover">
-						<span>All campaings in our system always alive and checked</span>
-					</div>
+						<div class="b-polygon_hexagon2">
+							<span class="b-polygon-part">
+								<span class="b-polygon-part b-polygon-part_content">
+									<span class="item__background" style="background-image: url(http://unsplash.it/280/280);"></span>
+									<span class="item__text">All campaings in our system always alive and checked</span>
+								</span>
+							</span>
+						</div>
+					</div>	
 				</a>
-				<a href="#" class="item is-tablet is-five">
+				<a href="#" class="item is-tablet js-visibility is-five">
 					<div class="item__inner">
 						<div class="item__icon">
 							<i class="is-payments"></i>
@@ -178,10 +192,17 @@
 						<small>payments</small>
 					</div>
 					<div class="item__hover">
-						<span>All campaings in our system always alive and checked</span>
-					</div>
+						<div class="b-polygon_hexagon2">
+							<span class="b-polygon-part">
+								<span class="b-polygon-part b-polygon-part_content">
+									<span class="item__background" style="background-image: url(http://placecage.com/280/280);"></span>
+									<span class="item__text">All campaings in our system always alive and checked</span>
+								</span>
+							</span>
+						</div>
+					</div>	
 				</a>
-				<a href="#" class="item is-six">
+				<a href="#" class="item js-visibility is-six">
 					<div class="item__inner">
 						<div class="item__icon">
 							<i class="is-tds"></i>
@@ -189,10 +210,17 @@
 						<b>Smart TDS</b>
 					</div>
 					<div class="item__hover">
-						<span>All campaings in our system always alive and checked</span>
-					</div>
+						<div class="b-polygon_hexagon2">
+							<span class="b-polygon-part">
+								<span class="b-polygon-part b-polygon-part_content">
+									<span class="item__background" style="background-image: url(http://unsplash.it/280/280);"></span>
+									<span class="item__text">All campaings in our system always alive and checked</span>
+								</span>
+							</span>
+						</div>
+					</div>	
 				</a>
-				<a href="#" class="item is-seven">
+				<a href="#" class="item js-visibility is-seven">
 					<div class="item__inner">
 						<div class="item__icon">
 							<i class="is-rtb"></i>
@@ -200,11 +228,19 @@
 						<b>RTB</b>
 					</div>
 					<div class="item__hover">
-						<span>All campaings in our system always alive and checked</span>
-					</div>
+						<div class="b-polygon_hexagon2">
+							<span class="b-polygon-part">
+								<span class="b-polygon-part b-polygon-part_content">
+									<span class="item__background" style="background-image: url(http://placecage.com/280/280);"></span>
+									<span class="item__text">All campaings in our system always alive and checked</span>
+								</span>
+							</span>
+						</div>
+					</div>	
 				</a>
+
 			</div>	
-			<a href="#" class="event is-eight">
+			<a href="#" class="event js-visibility is-eight">
 				<i class="is-signup"></i>
 				<span>Sign Up</span>
 			</a>		
@@ -213,11 +249,11 @@
 	<!-- end publishers -->
 
 	<!-- begin tools  -->
-	<section class="tools js-visibility">
+	<section class="tools js-block" id="services">
 		<div class="tools__inner">
-			<h3 class="title is-one">Tools</h3>
+			<h3 class="title js-visibility is-one">Tools</h3>
 			<div class="tools__list">
-				<div class="tools-item is-two">
+				<div class="tools-item js-visibility is-two">
 					<div class="tools-item__icon">
 						<i class="is-panel"></i>
 					</div>
@@ -226,7 +262,7 @@
 						<p>KingPing has developped its own proprietary admin panel which is supported by a team of talented engineers and our R&D department. Friendly and simple interface will safe your time and help you to control your campaings on the new level.</p>
 					</div>					
 				</div>
-				<div class="tools-item is-three">
+				<div class="tools-item js-visibility is-three">
 					<div class="tools-item__icon">
 						<i class="is-network"></i>
 					</div>
@@ -235,7 +271,7 @@
 						<p>Affiliate network KingPing works with hundreds traffic sources all around the world, through this partnership we always ready to provide our advertisers desired amount of traffic, almost from any point of the world.</p>
 					</div>					
 				</div>
-				<div class="tools-item is-four">
+				<div class="tools-item js-visibility is-four">
 					<div class="tools-item__icon">
 						<i class="is-rtb"></i>
 					</div>
@@ -248,7 +284,7 @@
 						<a href="#" class="tools-item__partner"><img src="img/doubleclick.jpg" alt=""></a>
 					</div>
 				</div>
-				<div class="tools-item is-five">
+				<div class="tools-item js-visibility is-five">
 					<div class="tools-item__icon">
 						<i class="is-tds"></i>
 					</div>
@@ -257,7 +293,7 @@
 						<p>Our technology allows you to analyse your traffic in real time by sending your traffic to the best optimized offer. As a publisher you don't have to worry about anything else other than just sending us traffic. Our team is constantly working to optimize your inventory and deliver the best result.</p>
 					</div>					
 				</div>
-				<div class="tools-item is-big is-six">
+				<div class="tools-item js-visibility is-big is-six">
 					<div class="tools-item__icon">
 						<i class="is-tools"></i>
 					</div>
@@ -272,11 +308,11 @@
 	<!-- end tools -->
 
 	<!-- begin events  -->
-	<section class="events js-visibility">
+	<section class="events js-block" id="events">
 		<div class="events__inner">
-			<h3 class="title is-one">Events</h3>
+			<h3 class="title js-visibility is-one">Events</h3>
 			<div class="events__slider-wrap">
-				<div class="events__slider js-slider is-three">
+				<div class="events__slider js-slider js-visibility is-three">
 					<div class="events__slide">
 						<a href="#" class="events__slide-inner">
 							<div class="events__time">
@@ -405,7 +441,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" class="event is-five">
+			<a href="#" class="event js-visibility is-five">
 				<i class="is-date"></i>
 				<span>Make appointment</span>
 			</a>	
@@ -414,14 +450,14 @@
 	<!-- end events -->
 
 	<!-- begin contacts  -->
-	<section class="contacts js-visibility">
+	<section class="contacts js-block" id="contacts">
 		<div class="contacts__inner">
-			<h3 class="title is-one">Contacts</h3>
-			<div class="contacts__info is-two">
+			<h3 class="title js-visibility is-one">Contacts</h3>
+			<div class="contacts__info js-visibility is-two">
 				<h2>Email: <b>support@kingping.com</b></h2>
 				<h2>Skype: <b>kingping</b></h2>
 			</div>
-			<ul class="contacts__phones is-three">
+			<ul class="contacts__phones js-visibility is-three">
 				<li>
 					<span>Phone US:</span>
 					<b>+1-212-290-4700</b>
@@ -437,7 +473,7 @@
 			</ul>
 			<div class="contacts__form">
 				<form action="">
-					<div class="contacts__row is-four">
+					<div class="contacts__row js-visibility is-four">
 						<div class="contacts__box">
 							<div class="field js-field">
 								<input type="text" class="input js-input" placeholder="Name *">
@@ -459,16 +495,16 @@
 							</div>							
 						</div>
 					</div>
-					<button class="btn btn_yellow is-five"><span>Send message</span></button>
+					<button class="btn btn_yellow js-visibility is-five"><span>Send message</span></button>
 				</form>
 			</div>		
 			<div class="footer">
-				<ul class="social is-six">
+				<ul class="social js-visibility is-six">
 					<li><a href="#" class="is-fb"></a></li>
 					<li><a href="#" class="is-tw"></a></li>
 					<li><a href="#" class="is-in"></a></li>
 				</ul>
-				<p class="copy is-seven">© 2015 Kingping. All rights reserved.</p>
+				<p class="copy js-visibility is-seven">© 2015 Kingping. All rights reserved.</p>
 			</div>	
 		</div>
 	</section>

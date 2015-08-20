@@ -138,7 +138,7 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; -moz-transition: background 0.3s; -o-transition: background 0.3s; -webkit-transition: background 0.3s; transition: background 0.3s; }
 .header.is-active { background: white; }
 .header.is-active .logo, .header.is-active .nav li a, .header.is-active .lang a.is-active { color: #1c2932; }
-.header.is-active .nav li a:hover { color: #a0bcd3; }
+.header.is-active .nav li a:hover, .header.is-active .nav li a.is-active { color: #a0bcd3; }
 .header.is-active .header__inner { padding: 15px 10px 15px; }
 .header.is-active .btn-nav { border-color: black; }
 .header.is-active .btn-nav span { background: black; }
@@ -164,8 +164,8 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 @media only screen and (max-width: 980px) { .nav li { display: block; padding: 0; } }
 .nav li a { font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; text-transform: uppercase; color: white; display: inline-block; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
 @media only screen and (max-width: 980px) { .nav li a { color: #1c2932; display: block; padding: 5px; } }
-.nav li a:hover { color: #a0bcd3; }
-@media only screen and (max-width: 980px) { .nav li a:hover { background: #a0bcd3; color: #1c2932; } }
+.nav li a:hover, .nav li a.is-active { color: #a0bcd3; }
+@media only screen and (max-width: 980px) { .nav li a:hover, .nav li a.is-active { background: #a0bcd3; color: #1c2932; } }
 
 .lang { padding: 15px 0; font-size: 0; float: right; position: relative; margin: 0 -12px 0 0; }
 @media only screen and (max-width: 980px) { .lang { float: left; } }
@@ -173,9 +173,10 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 .lang a { font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; text-transform: uppercase; color: #a0bcd3; display: inline-block; vertical-align: top; margin: 0 12px; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
 .lang a.is-active { color: white; }
 
-.top { position: relative; background: #1c2932; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; text-align: center; overflow: hidden; }
-.top__inner { position: relative; z-index: 2; max-width: 960px; padding: 310px 10px 70px; margin: 0 auto; }
-@media only screen and (max-width: 980px) { .top__inner { padding: 200px 10px 70px; max-width: 800px; } }
+.top { position: relative; background: #1c2932; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; text-align: center; overflow: hidden; height: 100vh; min-height: 580px; }
+@media only screen and (max-width: 980px) { .top { min-height: 100px; height: auto; padding-bottom: 100px; } }
+.top__inner { position: relative; z-index: 2; max-width: 960px; padding: 150px 10px 150px; margin: 0 auto; position: absolute; top: 50%; left: 50%; -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+@media only screen and (max-width: 980px) { .top__inner { padding: 200px 10px 70px; max-width: 800px; position: relative; top: auto; left: auto; -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -webkit-transform: translate(0, 0); transform: translate(0, 0); } }
 @media only screen and (max-width: 768px) { .top__inner { max-width: 400px; } }
 .top__slider { text-align: center; padding: 0 0 50px; }
 .top__slider .slick-track { margin-bottom: 50px; }
@@ -183,7 +184,7 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 @media only screen and (max-width: 980px) { .top__slide { font-size: 28px; } }
 @media only screen and (max-width: 768px) { .top__slide { font-size: 22px; } }
 .top__slide b { color: #a0bcd3; font-family: "ProximaNova Bold", Arial, sans-serif; }
-.top .btn { margin-bottom: 172px; }
+.top .scroll-btn { position: absolute; bottom: 70px; left: 50%; margin-left: -46px; }
 
 .about { background: url(../img/about.png) no-repeat 95px 0 #f06c5f; text-align: center; }
 .about__inner { max-width: 780px; margin: 0 auto; padding: 147px 10px; }
@@ -280,9 +281,9 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 .item b, .item small { text-transform: uppercase; color: white; line-height: 1; display: block; }
 .item b { font-size: 21px; font-family: "ProximaNova Bold", Arial, sans-serif; }
 .item small { font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; }
-.item__hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; visibility: hidden; -moz-transition: opacity 0.4s, visibility 0.4s; -o-transition: opacity 0.4s, visibility 0.4s; -webkit-transition: opacity 0.4s, visibility 0.4s; transition: opacity 0.4s, visibility 0.4s; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url(../img/item-hover.png) no-repeat center center; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; text-align: center; font-size: 0; padding: 30px; }
-.item__hover:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
-.item__hover span { display: inline-block; vertical-align: middle; color: white; font-size: 16px; font-family: "ProximaNova Bold", Arial, sans-serif; line-height: 1.2; }
+.item__hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; visibility: hidden; -moz-transition: opacity 0.4s, visibility 0.4s; -o-transition: opacity 0.4s, visibility 0.4s; -webkit-transition: opacity 0.4s, visibility 0.4s; transition: opacity 0.4s, visibility 0.4s; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url(../img/item-hover.png) no-repeat center center; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; padding: 30px; }
+.item__background { background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30); opacity: 0.3; }
+.item__text { display: inline-block; vertical-align: middle; color: white; font-size: 16px; font-family: "ProximaNova Bold", Arial, sans-serif; line-height: 1.2; padding: 10px 30px; position: relative; z-index: 3; }
 
 .tools__inner { max-width: 980px; padding: 150px 10px 30px; margin: 0 auto; text-align: center; }
 @media only screen and (max-width: 768px) { .tools__inner { padding: 100px 10px 30px; } }
@@ -382,13 +383,10 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 
 .copy { font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; }
 
-.js-visibility.is-visible .is-one, .js-visibility.is-visible .is-two, .js-visibility.is-visible .is-three, .js-visibility.is-visible .is-four, .js-visibility.is-visible .is-five, .js-visibility.is-visible .is-six, .js-visibility.is-visible .is-seven, .js-visibility.is-visible .is-eight { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); }
-.js-visibility .is-one, .js-visibility .is-two, .js-visibility .is-three, .js-visibility .is-four, .js-visibility .is-five, .js-visibility .is-six, .js-visibility .is-seven, .js-visibility .is-eight { visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; transform: matrix(0.9, 0, 0, 0.9, 0, 0); }
-.js-visibility .is-one { -moz-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -moz-transform 0.4s 0.2s; -o-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -o-transform 0.4s 0.2s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.2s, 0.2s, 0.2s; transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s; }
-.js-visibility .is-two { -moz-transition: opacity 0.25s 0.4s, visibility 0.25s 0.4s, -moz-transform 0.4s 0.4s; -o-transition: opacity 0.25s 0.4s, visibility 0.25s 0.4s, -o-transform 0.4s 0.4s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.4s, 0.4s, 0.4s; transition: opacity 0.25s 0.4s, visibility 0.25s 0.4s, transform 0.4s 0.4s; }
-.js-visibility .is-three { -moz-transition: opacity 0.25s 0.6s, visibility 0.25s 0.6s, -moz-transform 0.4s 0.6s; -o-transition: opacity 0.25s 0.6s, visibility 0.25s 0.6s, -o-transform 0.4s 0.6s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.6s, 0.6s, 0.6s; transition: opacity 0.25s 0.6s, visibility 0.25s 0.6s, transform 0.4s 0.6s; }
-.js-visibility .is-four { -moz-transition: opacity 0.25s 0.8s, visibility 0.25s 0.8s, -moz-transform 0.4s 0.8s; -o-transition: opacity 0.25s 0.8s, visibility 0.25s 0.8s, -o-transform 0.4s 0.8s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.8s, 0.8s, 0.8s; transition: opacity 0.25s 0.8s, visibility 0.25s 0.8s, transform 0.4s 0.8s; }
-.js-visibility .is-five { -moz-transition: opacity 0.25s 1s, visibility 0.25s 1s, -moz-transform 0.4s 1s; -o-transition: opacity 0.25s 1s, visibility 0.25s 1s, -o-transform 0.4s 1s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1s, 1s, 1s; transition: opacity 0.25s 1s, visibility 0.25s 1s, transform 0.4s 1s; }
-.js-visibility .is-six { -moz-transition: opacity 0.25s 1.2s, visibility 0.25s 1.2s, -moz-transform 0.4s 1.2s; -o-transition: opacity 0.25s 1.2s, visibility 0.25s 1.2s, -o-transform 0.4s 1.2s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1.2s, 1.2s, 1.2s; transition: opacity 0.25s 1.2s, visibility 0.25s 1.2s, transform 0.4s 1.2s; }
-.js-visibility .is-seven { -moz-transition: opacity 0.25s 1.4s, visibility 0.25s 1.4s, -moz-transform 0.4s 1.4s; -o-transition: opacity 0.25s 1.4s, visibility 0.25s 1.4s, -o-transform 0.4s 1.4s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1.4s, 1.4s, 1.4s; transition: opacity 0.25s 1.4s, visibility 0.25s 1.4s, transform 0.4s 1.4s; }
-.js-visibility .is-eight { -moz-transition: opacity 0.25s 1.6s, visibility 0.25s 1.6s, -moz-transform 0.4s 1.6s; -o-transition: opacity 0.25s 1.6s, visibility 0.25s 1.6s, -o-transform 0.4s 1.6s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1.6s, 1.6s, 1.6s; transition: opacity 0.25s 1.6s, visibility 0.25s 1.6s, transform 0.4s 1.6s; }
+.js-visibility { -moz-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -moz-transform 0.4s 0.2s; -o-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -o-transform 0.4s 0.2s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.2s, 0.2s, 0.2s; transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; transform: matrix(0.9, 0, 0, 0.9, 0, 0); }
+.js-visibility.is-visible { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); }
+
+.b-polygon_hexagon2 { -ms-transform: rotate(120deg); -webkit-transform: rotate(120deg); transform: rotate(120deg); width: 240px; height: 480px; margin: -132px -29px; display: inline-block; text-align: center; overflow: hidden; }
+.b-polygon_hexagon2 .b-polygon-part { -ms-transform: rotate(-60deg); -webkit-transform: rotate(-60deg); transform: rotate(-60deg); visibility: hidden; display: block; overflow: hidden; width: 100%; height: 100%; }
+.b-polygon_hexagon2 .b-polygon-part_content { width: 240px; height: 276px; margin: 102px 0; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; visibility: visible; text-align: center; font-size: 0; background-color: #f06c5f; position: relative; }
+.b-polygon_hexagon2 .b-polygon-part_content:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
