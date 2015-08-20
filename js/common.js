@@ -30,6 +30,7 @@ head.ready(function() {
 		dots: false,
 		slidesToShow: 3,
 		slidesToScroll: 1,
+		infinite: true,
 		responsive: [
 		   {
 		     breakpoint: 980,
@@ -117,5 +118,7 @@ head.ready(function() {
 	$(window).load(function(){
 		visibility();
 	});
+
+	autosize(document.querySelectorAll('.js-textarea'));
 
 });

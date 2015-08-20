@@ -1,6 +1,23 @@
 .out
 	overflow: hidden
 	min-width: 320px
+
+.video
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	+opacity(0.2)
+	video
+		position: absolute
+		right: 0
+		bottom: 0
+		min-width: 100%
+		min-height: 100%
+		width: auto
+		height: auto
+
 .header
 	position: fixed
 	top: 0
@@ -154,9 +171,11 @@
 
 .top
 	position: relative
-	background: url(../img/shutterstock_189606761.jpg) no-repeat fixed
+	// background: url(../img/shutterstock_189606761.jpg) no-repeat fixed
+	background: #1c2932 
 	+cover		
 	text-align: center
+	overflow: hidden
 	&__inner
 		position: relative
 		z-index: 2
@@ -603,18 +622,21 @@
 .events
 	background-color: #ECF2F6
 	&__inner
-		max-width: 1000px
-		padding: 150px 10px
+		// max-width: 1000px
+		// width: 90%
+		padding: 150px 0
 		margin: 0 auto
 		text-align: center
 		+r1
-			max-width: 780px
+			// max-width: 780px
+			max-width: 80%
 		+r2
 			max-width: 400px
+			width: 80%
 			padding: 100px 10px 
 	.title
 		color: #1C2932
-		margin-bottom: 40px
+		margin-bottom: 100px
 	&__tabs
 		font-size: 0
 		margin-bottom: 74px
@@ -633,9 +655,54 @@
 				border-bottom: 4px solid transparent 
 				&.is-active
 					border-bottom-color: #F06C5F
-	&__slider
+	&__slider-wrap
+		position: relative
 		margin-bottom: 85px
-		padding: 0 40px 
+		border-top: 1px dotted #cadbe8
+		padding: 27px 10px 0 
+	&__slider
+		// padding: 0 40px 
+		max-width: 980px
+		width: 90%
+		margin: 0 auto 
+		&:before, &:after
+			position: absolute
+			top: 0
+			bottom: 0
+			width: 10000px
+			background: #ecf2f6
+			+opacity(0.7) 
+			content: "" 
+			z-index: 10
+			display: none
+		&:before
+			left: 100%
+		&:after
+			right: 100%
+		.slick-next, .slick-prev
+			z-index: 20
+			position: absolute
+			top: 0
+			bottom: 0
+			+opacity(0)
+			width: 10000px
+			height: auto
+		.slick-next
+			left: 100%
+			right: auto
+			margin-left: -15px
+		.slick-prev
+			right: 100%
+			left: auto
+			margin-right: -15px
+	.slick-list
+		overflow: visible
+	.slick-slide
+		.events__img, p, small
+			+opacity(0.3)
+		&.slick-active
+			.events__img, p, small
+				+opacity(1)
 	&__slide
 		text-align: left
 		padding: 0 15px
@@ -643,26 +710,79 @@
 			padding: 0 10px 
 	&__slide-inner
 		display: block
+		position: relative
 	&__img
 		margin-bottom: 25px
-	img
 		width: 100%
-	time, small
-		display: block
-		line-height: 18px
-	time
-		color: #64717B
-		font-size: 15px
-		+reg
+		height: 0
+		padding-bottom: 100%
+		position: relative
+		&-in
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			padding: 10px
+			+vertical 
+			background: #fff
+	img
+		max-width: 100%
+		max-height: 100%
+		display: inline-block
+		vertical-align: middle
+	p
+		color: #F06C5F
+		font-size: 21px
+		+semi
 		margin-bottom: 18px
 	small
 		color: #1C2932
 		font-size: 14px
 		+semi
 		max-width: 193px
+		display: block
+		line-height: 18px
 		+r1
 			max-width: 100%
-		
+	&__time
+		+box-shadow(0 2px 7px rgba(0, 0, 0, 0.2))
+		width: 75px
+		position: absolute
+		top: -34px
+		left: 12px
+		z-index: 30
+		background: #fff
+		text-align: center 
+		&:before
+			position: absolute
+			top: 0
+			right: 100%
+			width: 3px
+			height: 18px
+			background: #9ab5cc 
+			content: "" 
+		span
+			display: block
+			&.is-month
+				font-size: 15px
+				color: #737A80
+				line-height: 20px
+				+semi
+				padding: 10px 0 0 
+			&.is-day
+				color: #1C2932
+				font-size: 17px
+				line-height: 20px
+				+semi
+				padding: 0 0 10px 
+			&.is-year
+				background-color: #B93563
+				font-size: 13px
+				color: #fff
+				+bold 
+				line-height: 1
+				padding: 7px 0 6px 
 .contacts
 	background-color: #F06C5F
 	&__inner
@@ -776,22 +896,24 @@
 		.is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
 			visibility: visible
 			+opacity(1)
+			transform: matrix(1, 0, 0, 1, 0, 0)
 	.is-one, .is-two, .is-three, .is-four, .is-five, .is-six, .is-seven, .is-eight
 		visibility: hidden
 		+opacity(0)
+		transform: matrix(0.9, 0, 0, 0.9, 0, 0)
 	.is-one	
-		+transition(opacity 0.4s 0.3s, visibility 0.4s 0.3s)
+		+transition(opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s)
 	.is-two	
-		+transition(opacity 0.4s 0.6s, visibility 0.4s 0.6s)
+		+transition(opacity 0.25s 0.4s, visibility 0.25s 0.4s, transform 0.4s 0.4s)
 	.is-three	
-		+transition(opacity 0.4s 0.9s, visibility 0.4s 0.9s)
+		+transition(opacity 0.25s 0.6s, visibility 0.25s 0.6s, transform 0.4s 0.6s)
 	.is-four	
-		+transition(opacity 0.4s 1.2s, visibility 0.4s 1.2s)
+		+transition(opacity 0.25s 0.8s, visibility 0.25s 0.8s, transform 0.4s 0.8s)
 	.is-five	
-		+transition(opacity 0.4s 1.5s, visibility 0.4s 1.5s)
+		+transition(opacity 0.25s 1s, visibility 0.25s 1s, transform 0.4s 1s)
 	.is-six	
-		+transition(opacity 0.4s 1.8s, visibility 0.4s 1.8s)
+		+transition(opacity 0.25s 1.2s, visibility 0.25s 1.2s, transform 0.4s 1.2s)
 	.is-seven	
-		+transition(opacity 0.4s 2.1s, visibility 0.4s 2.1s)
+		+transition(opacity 0.25s 1.4s, visibility 0.25s 1.4s, transform 0.4s 1.4s)
 	.is-eight	
-		+transition(opacity 0.4s 2.4s, visibility 0.4s 2.4s)
+		+transition(opacity 0.25s 1.6s, visibility 0.25s 1.6s, transform 0.4s 1.6s)

@@ -72,9 +72,10 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 .field { position: relative; text-align: left; }
 .field:before { position: absolute; bottom: 0; left: 50%; right: 50%; height: 4px; background: #fcb252; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; content: ""; }
 .field.is-active:before { left: 0; right: 0; }
-.field .input { font-size: 16px; color: white; font-family: "ProximaNova Regular", Arial, sans-serif; background: none; width: 100%; border-bottom: 4px solid white; padding: 16px 0; }
+.field .input { font-size: 16px; color: white; font-family: "ProximaNova Regular", Arial, sans-serif; background: none; width: 100%; border: none; border-bottom: 4px solid white; padding: 16px 0; }
 .field .input:-moz-placeholder, .field .input::-moz-placeholder { color: white; opacity: 1; }
 .field .input::-webkit-input-placeholder { color: white; }
+.field textarea.input { height: 55px; resize: none; }
 
 .btn-nav { float: right; width: 30px; border: 1px solid white; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: none; text-align: center; font-size: 0; padding: 12px 0; -moz-transition: border-color 0.3s; -o-transition: border-color 0.3s; -webkit-transition: border-color 0.3s; transition: border-color 0.3s; margin: 9px 0 0; display: none; }
 @media only screen and (max-width: 980px) { .btn-nav { display: block; } }
@@ -131,6 +132,9 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 
 .out { overflow: hidden; min-width: 320px; }
 
+.video { position: absolute; top: 0; left: 0; right: 0; bottom: 0; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2; }
+.video video { position: absolute; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; }
+
 .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; -moz-transition: background 0.3s; -o-transition: background 0.3s; -webkit-transition: background 0.3s; transition: background 0.3s; }
 .header.is-active { background: white; }
 .header.is-active .logo, .header.is-active .nav li a, .header.is-active .lang a.is-active { color: #1c2932; }
@@ -169,7 +173,7 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 .lang a { font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; text-transform: uppercase; color: #a0bcd3; display: inline-block; vertical-align: top; margin: 0 12px; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
 .lang a.is-active { color: white; }
 
-.top { position: relative; background: url(../img/shutterstock_189606761.jpg) no-repeat fixed; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; text-align: center; }
+.top { position: relative; background: #1c2932; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; text-align: center; overflow: hidden; }
 .top__inner { position: relative; z-index: 2; max-width: 960px; padding: 310px 10px 70px; margin: 0 auto; }
 @media only screen and (max-width: 980px) { .top__inner { padding: 200px 10px 70px; max-width: 800px; } }
 @media only screen and (max-width: 768px) { .top__inner { max-width: 400px; } }
@@ -308,24 +312,41 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 .tools-item__icon i.is-tools { background: url("../img/svg/tools.svg") no-repeat 0 0; -moz-background-size: 67px 67px; -o-background-size: 67px 67px; -webkit-background-size: 67px 67px; background-size: 67px 67px; width: 67px; height: 67px; display: inline-block; }
 
 .events { background-color: #ecf2f6; }
-.events__inner { max-width: 1000px; padding: 150px 10px; margin: 0 auto; text-align: center; }
-@media only screen and (max-width: 980px) { .events__inner { max-width: 780px; } }
-@media only screen and (max-width: 768px) { .events__inner { max-width: 400px; padding: 100px 10px; } }
-.events .title { color: #1c2932; margin-bottom: 40px; }
+.events__inner { padding: 150px 0; margin: 0 auto; text-align: center; }
+@media only screen and (max-width: 980px) { .events__inner { max-width: 80%; } }
+@media only screen and (max-width: 768px) { .events__inner { max-width: 400px; width: 80%; padding: 100px 10px; } }
+.events .title { color: #1c2932; margin-bottom: 100px; }
 .events__tabs { font-size: 0; margin-bottom: 74px; }
 .events__tabs li { display: inline-block; vertical-align: top; padding: 0 35px; }
 .events__tabs li a { color: #1c2932; opacity: 0.7; display: inline-block; font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; text-transform: uppercase; padding: 15px 0; border-bottom: 4px solid transparent; }
 .events__tabs li a.is-active { border-bottom-color: #f06c5f; }
-.events__slider { margin-bottom: 85px; padding: 0 40px; }
+.events__slider-wrap { position: relative; margin-bottom: 85px; border-top: 1px dotted #cadbe8; padding: 27px 10px 0; }
+.events__slider { max-width: 980px; width: 90%; margin: 0 auto; }
+.events__slider:before, .events__slider:after { position: absolute; top: 0; bottom: 0; width: 10000px; background: #ecf2f6; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; content: ""; z-index: 10; display: none; }
+.events__slider:before { left: 100%; }
+.events__slider:after { right: 100%; }
+.events__slider .slick-next, .events__slider .slick-prev { z-index: 20; position: absolute; top: 0; bottom: 0; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; width: 10000px; height: auto; }
+.events__slider .slick-next { left: 100%; right: auto; margin-left: -15px; }
+.events__slider .slick-prev { right: 100%; left: auto; margin-right: -15px; }
+.events .slick-list { overflow: visible; }
+.events .slick-slide .events__img, .events .slick-slide p, .events .slick-slide small { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30); opacity: 0.3; }
+.events .slick-slide.slick-active .events__img, .events .slick-slide.slick-active p, .events .slick-slide.slick-active small { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .events__slide { text-align: left; padding: 0 15px; }
 @media only screen and (max-width: 980px) { .events__slide { padding: 0 10px; } }
-.events__slide-inner { display: block; }
-.events__img { margin-bottom: 25px; }
-.events img { width: 100%; }
-.events time, .events small { display: block; line-height: 18px; }
-.events time { color: #64717b; font-size: 15px; font-family: "ProximaNova Regular", Arial, sans-serif; margin-bottom: 18px; }
-.events small { color: #1c2932; font-size: 14px; font-family: "ProximaNova Semibold", Arial, sans-serif; max-width: 193px; }
+.events__slide-inner { display: block; position: relative; }
+.events__img { margin-bottom: 25px; width: 100%; height: 0; padding-bottom: 100%; position: relative; }
+.events__img-in { position: absolute; top: 0; bottom: 0; left: 0; right: 0; padding: 10px; text-align: center; font-size: 0; background: white; }
+.events__img-in:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.events img { max-width: 100%; max-height: 100%; display: inline-block; vertical-align: middle; }
+.events p { color: #f06c5f; font-size: 21px; font-family: "ProximaNova Semibold", Arial, sans-serif; margin-bottom: 18px; }
+.events small { color: #1c2932; font-size: 14px; font-family: "ProximaNova Semibold", Arial, sans-serif; max-width: 193px; display: block; line-height: 18px; }
 @media only screen and (max-width: 980px) { .events small { max-width: 100%; } }
+.events__time { -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2); box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2); width: 75px; position: absolute; top: -34px; left: 12px; z-index: 30; background: white; text-align: center; }
+.events__time:before { position: absolute; top: 0; right: 100%; width: 3px; height: 18px; background: #9ab5cc; content: ""; }
+.events__time span { display: block; }
+.events__time span.is-month { font-size: 15px; color: #737a80; line-height: 20px; font-family: "ProximaNova Semibold", Arial, sans-serif; padding: 10px 0 0; }
+.events__time span.is-day { color: #1c2932; font-size: 17px; line-height: 20px; font-family: "ProximaNova Semibold", Arial, sans-serif; padding: 0 0 10px; }
+.events__time span.is-year { background-color: #b93563; font-size: 13px; color: white; font-family: "ProximaNova Bold", Arial, sans-serif; line-height: 1; padding: 7px 0 6px; }
 
 .contacts { background-color: #f06c5f; }
 .contacts__inner { max-width: 960px; padding: 150px 10px 70px; text-align: center; margin: 0 auto; color: white; }
@@ -361,13 +382,13 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 
 .copy { font-size: 13px; font-family: "ProximaNova Semibold", Arial, sans-serif; }
 
-.js-visibility.is-visible .is-one, .js-visibility.is-visible .is-two, .js-visibility.is-visible .is-three, .js-visibility.is-visible .is-four, .js-visibility.is-visible .is-five, .js-visibility.is-visible .is-six, .js-visibility.is-visible .is-seven, .js-visibility.is-visible .is-eight { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
-.js-visibility .is-one, .js-visibility .is-two, .js-visibility .is-three, .js-visibility .is-four, .js-visibility .is-five, .js-visibility .is-six, .js-visibility .is-seven, .js-visibility .is-eight { visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
-.js-visibility .is-one { -moz-transition: opacity 0.4s 0.3s, visibility 0.4s 0.3s; -o-transition: opacity 0.4s 0.3s, visibility 0.4s 0.3s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 0.3s, 0.3s; transition: opacity 0.4s 0.3s, visibility 0.4s 0.3s; }
-.js-visibility .is-two { -moz-transition: opacity 0.4s 0.6s, visibility 0.4s 0.6s; -o-transition: opacity 0.4s 0.6s, visibility 0.4s 0.6s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 0.6s, 0.6s; transition: opacity 0.4s 0.6s, visibility 0.4s 0.6s; }
-.js-visibility .is-three { -moz-transition: opacity 0.4s 0.9s, visibility 0.4s 0.9s; -o-transition: opacity 0.4s 0.9s, visibility 0.4s 0.9s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 0.9s, 0.9s; transition: opacity 0.4s 0.9s, visibility 0.4s 0.9s; }
-.js-visibility .is-four { -moz-transition: opacity 0.4s 1.2s, visibility 0.4s 1.2s; -o-transition: opacity 0.4s 1.2s, visibility 0.4s 1.2s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 1.2s, 1.2s; transition: opacity 0.4s 1.2s, visibility 0.4s 1.2s; }
-.js-visibility .is-five { -moz-transition: opacity 0.4s 1.5s, visibility 0.4s 1.5s; -o-transition: opacity 0.4s 1.5s, visibility 0.4s 1.5s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 1.5s, 1.5s; transition: opacity 0.4s 1.5s, visibility 0.4s 1.5s; }
-.js-visibility .is-six { -moz-transition: opacity 0.4s 1.8s, visibility 0.4s 1.8s; -o-transition: opacity 0.4s 1.8s, visibility 0.4s 1.8s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 1.8s, 1.8s; transition: opacity 0.4s 1.8s, visibility 0.4s 1.8s; }
-.js-visibility .is-seven { -moz-transition: opacity 0.4s 2.1s, visibility 0.4s 2.1s; -o-transition: opacity 0.4s 2.1s, visibility 0.4s 2.1s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 2.1s, 2.1s; transition: opacity 0.4s 2.1s, visibility 0.4s 2.1s; }
-.js-visibility .is-eight { -moz-transition: opacity 0.4s 2.4s, visibility 0.4s 2.4s; -o-transition: opacity 0.4s 2.4s, visibility 0.4s 2.4s; -webkit-transition: opacity 0.4s, visibility 0.4s; -webkit-transition-delay: 2.4s, 2.4s; transition: opacity 0.4s 2.4s, visibility 0.4s 2.4s; }
+.js-visibility.is-visible .is-one, .js-visibility.is-visible .is-two, .js-visibility.is-visible .is-three, .js-visibility.is-visible .is-four, .js-visibility.is-visible .is-five, .js-visibility.is-visible .is-six, .js-visibility.is-visible .is-seven, .js-visibility.is-visible .is-eight { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); }
+.js-visibility .is-one, .js-visibility .is-two, .js-visibility .is-three, .js-visibility .is-four, .js-visibility .is-five, .js-visibility .is-six, .js-visibility .is-seven, .js-visibility .is-eight { visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; transform: matrix(0.9, 0, 0, 0.9, 0, 0); }
+.js-visibility .is-one { -moz-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -moz-transform 0.4s 0.2s; -o-transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, -o-transform 0.4s 0.2s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.2s, 0.2s, 0.2s; transition: opacity 0.25s 0.2s, visibility 0.25s 0.2s, transform 0.4s 0.2s; }
+.js-visibility .is-two { -moz-transition: opacity 0.25s 0.4s, visibility 0.25s 0.4s, -moz-transform 0.4s 0.4s; -o-transition: opacity 0.25s 0.4s, visibility 0.25s 0.4s, -o-transform 0.4s 0.4s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.4s, 0.4s, 0.4s; transition: opacity 0.25s 0.4s, visibility 0.25s 0.4s, transform 0.4s 0.4s; }
+.js-visibility .is-three { -moz-transition: opacity 0.25s 0.6s, visibility 0.25s 0.6s, -moz-transform 0.4s 0.6s; -o-transition: opacity 0.25s 0.6s, visibility 0.25s 0.6s, -o-transform 0.4s 0.6s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.6s, 0.6s, 0.6s; transition: opacity 0.25s 0.6s, visibility 0.25s 0.6s, transform 0.4s 0.6s; }
+.js-visibility .is-four { -moz-transition: opacity 0.25s 0.8s, visibility 0.25s 0.8s, -moz-transform 0.4s 0.8s; -o-transition: opacity 0.25s 0.8s, visibility 0.25s 0.8s, -o-transform 0.4s 0.8s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 0.8s, 0.8s, 0.8s; transition: opacity 0.25s 0.8s, visibility 0.25s 0.8s, transform 0.4s 0.8s; }
+.js-visibility .is-five { -moz-transition: opacity 0.25s 1s, visibility 0.25s 1s, -moz-transform 0.4s 1s; -o-transition: opacity 0.25s 1s, visibility 0.25s 1s, -o-transform 0.4s 1s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1s, 1s, 1s; transition: opacity 0.25s 1s, visibility 0.25s 1s, transform 0.4s 1s; }
+.js-visibility .is-six { -moz-transition: opacity 0.25s 1.2s, visibility 0.25s 1.2s, -moz-transform 0.4s 1.2s; -o-transition: opacity 0.25s 1.2s, visibility 0.25s 1.2s, -o-transform 0.4s 1.2s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1.2s, 1.2s, 1.2s; transition: opacity 0.25s 1.2s, visibility 0.25s 1.2s, transform 0.4s 1.2s; }
+.js-visibility .is-seven { -moz-transition: opacity 0.25s 1.4s, visibility 0.25s 1.4s, -moz-transform 0.4s 1.4s; -o-transition: opacity 0.25s 1.4s, visibility 0.25s 1.4s, -o-transform 0.4s 1.4s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1.4s, 1.4s, 1.4s; transition: opacity 0.25s 1.4s, visibility 0.25s 1.4s, transform 0.4s 1.4s; }
+.js-visibility .is-eight { -moz-transition: opacity 0.25s 1.6s, visibility 0.25s 1.6s, -moz-transform 0.4s 1.6s; -o-transition: opacity 0.25s 1.6s, visibility 0.25s 1.6s, -o-transform 0.4s 1.6s; -webkit-transition: opacity 0.25s, visibility 0.25s, -webkit-transform 0.4s; -webkit-transition-delay: 1.6s, 1.6s, 1.6s; transition: opacity 0.25s 1.6s, visibility 0.25s 1.6s, transform 0.4s 1.6s; }
