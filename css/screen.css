@@ -137,18 +137,26 @@ p { font-size: 21px; font-family: "ProximaNova Regular", Arial, sans-serif; line
 
 .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; -moz-transition: background 0.3s; -o-transition: background 0.3s; -webkit-transition: background 0.3s; transition: background 0.3s; }
 .header.is-active { background: white; }
-.header.is-active .logo, .header.is-active .nav li a, .header.is-active .lang a.is-active { color: #1c2932; }
+.header.is-active .logo, .header.is-active .nav li a, .header.is-active .lang a.is-active, .header.is-active .sign-in { color: #1c2932; }
 .header.is-active .nav li a:hover, .header.is-active .nav li a.is-active { color: #a0bcd3; }
+@media only screen and (max-width: 980px) { .header.is-active .nav li a:hover, .header.is-active .nav li a.is-active { color: white; } }
 .header.is-active .header__inner { padding: 15px 10px 15px; }
 .header.is-active .btn-nav { border-color: black; }
 .header.is-active .btn-nav span { background: black; }
 .header.is-active .btn-nav span:before, .header.is-active .btn-nav span:after { background: black; }
 @media only screen and (max-width: 980px) { .header.is-active .nav { margin: -10px 0 0; } }
 @media only screen and (max-width: 980px) { .header.is-active .nav.is-active { margin: 15px 0 0; } }
+.header.is-active .sign-in:hover { color: white; }
 .header__inner { position: relative; z-index: 2; max-width: 960px; padding: 32px 10px 32px; margin: 0 auto; *zoom: 1; -moz-transition: padding 0.3s; -o-transition: padding 0.3s; -webkit-transition: padding 0.3s; transition: padding 0.3s; }
 .header__inner:after { content: " "; display: table; clear: both; }
 
-.logo { font-family: "ProximaNova Bold", Arial, sans-serif; color: white; font-size: 22px; line-height: 1; padding: 13px 0 10px 55px; float: left; position: relative; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; margin: 0 112px 0 5px; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
+.sign-in { float: right; padding: 7px 14px 6px; border: 2px solid #f06c5f; -moz-border-radius: 16px; -webkit-border-radius: 16px; border-radius: 16px; color: white; font-family: "ProximaNova Semibold", Arial, sans-serif; text-transform: uppercase; font-size: 13px; background: none; margin: 6px 15px 0 0; -moz-transition: background 0.3s, color 0.3s; -o-transition: background 0.3s, color 0.3s; -webkit-transition: background 0.3s, color 0.3s; transition: background 0.3s, color 0.3s; }
+@media only screen and (max-width: 980px) { .sign-in { display: none; } }
+.sign-in:hover { background: #f06c5f; color: white; }
+.sign-in.is-tablet { display: none; float: none; margin: 0; }
+@media only screen and (max-width: 980px) { .sign-in.is-tablet { display: inline-block; } }
+
+.logo { font-family: "ProximaNova Bold", Arial, sans-serif; color: white; font-size: 22px; line-height: 1; padding: 13px 0 10px 55px; float: left; position: relative; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; margin: 0 63px 0 5px; -moz-transition: color 0.3s; -o-transition: color 0.3s; -webkit-transition: color 0.3s; transition: color 0.3s; }
 @media only screen and (max-width: 980px) { .logo { margin: 0 20px 0 0; } }
 .logo b { color: #a0bcd3; }
 .logo:before { content: ""; background: url("../img/svg/logo.svg") no-repeat 0 0; -moz-background-size: 41px 45px; -o-background-size: 41px 45px; -webkit-background-size: 41px 45px; background-size: 41px 45px; width: 41px; height: 45px; display: inline-block; position: absolute; top: 0; left: 0; }

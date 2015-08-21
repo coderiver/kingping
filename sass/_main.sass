@@ -27,11 +27,13 @@
 	+transition(background 0.3s)
 	&.is-active
 		background: #fff 
-		.logo, .nav li a, .lang a.is-active
+		.logo, .nav li a, .lang a.is-active, .sign-in
 			color: #1c2932 
 		.nav li a
 			&:hover, &.is-active
 				color: #a0bcd3 
+				+r1
+					color: #fff 
 		.header__inner
 			padding: 15px 10px 15px 
 		.btn-nav
@@ -46,6 +48,9 @@
 			&.is-active
 				+r1
 					margin: 15px 0 0
+		.sign-in
+			&:hover
+				color: #fff 
 	&__inner
 		position: relative
 		z-index: 2
@@ -54,6 +59,30 @@
 		margin: 0 auto  
 		+clr
 		+transition(padding 0.3s)
+
+.sign-in
+	float: right
+	padding: 7px 14px 6px
+	border: 2px solid #F06C5F
+	+border-radius(16px)
+	color: #FFF
+	+semi
+	text-transform: uppercase
+	font-size: 13px
+	background: none
+	margin: 6px 15px 0 0
+	+transition(background 0.3s, color 0.3s)
+	+r1
+		display: none
+	&:hover
+		background: #F06C5F 
+		color: #fff 
+	&.is-tablet
+		display: none	
+		float: none
+		margin: 0
+		+r1
+			display: inline-block
 
 .logo
 	+bold
@@ -64,7 +93,7 @@
 	float: left
 	position: relative
 	+user-select(none)
-	margin: 0 112px 0 5px 
+	margin: 0 63px 0 5px 
 	+transition(color 0.3s)
 	+r1
 		margin: 0 20px 0 0 
